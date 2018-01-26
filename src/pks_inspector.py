@@ -7,6 +7,7 @@ from collections import namedtuple
 import functools
 import importlib
 import pprint
+import sys
 
 import kaitaistruct
 
@@ -171,8 +172,12 @@ def to_tree(kstruct):
     return fields
 
 
-def get_base_parser(modulefile):
-    mod = importlib.import_module(modulefile)
+def get_base_parser(modulename, modulefile):
+    try:
+        mod = importlib.machinery.SourceFileLoader(
+            modulename, modulefile).load_module()
+    except ModuleNotFoundError:
+        return None, None
     try:
         mod.KaitaiStruct.isWrapped
     except AttributeError:
@@ -181,8 +186,8 @@ def get_base_parser(modulefile):
     for name in dir(mod):
         obj = getattr(mod, name)
         if issubclass(obj, kaitaistruct.KaitaiStruct) and obj != kaitaistruct.KaitaiStruct:
-            return obj
-    return None
+            return obj, name
+    return None, None
 
 
 if __name__ == '__main__':

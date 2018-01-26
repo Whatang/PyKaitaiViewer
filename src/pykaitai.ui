@@ -6,53 +6,151 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1031</width>
+    <height>758</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>PyKaitai Viewer</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
+   <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QPlainTextEdit" name="ksy_editor">
-      <property name="font">
-       <font>
-        <family>DejaVu Sans Mono</family>
-        <pointsize>10</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Details</string>
       </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="3" column="2">
+        <widget class="QLabel" name="target_file_label">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QPushButton" name="reloadButton">
+         <property name="text">
+          <string>Reload</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="ksy_filename_value_label">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <widget class="QPushButton" name="targetFileButton">
+         <property name="text">
+          <string>Open</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Target File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="ksy_filename_label">
+         <property name="text">
+          <string>.ksy file</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QPushButton" name="ksyFileButton">
+         <property name="text">
+          <string>Open</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="parser_file_name">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Python Parser</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Root Parser Class</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLabel" name="root_parser_class_label">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
     <item>
-     <widget class="QTreeWidget" name="data_tree">
-      <property name="font">
-       <font>
-        <family>DejaVu Sans Mono</family>
-        <pointsize>10</pointsize>
-       </font>
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
       </property>
-      <attribute name="headerVisible">
-       <bool>false</bool>
-      </attribute>
-      <column>
-       <property name="text">
-        <string>Data</string>
-       </property>
-      </column>
-     </widget>
-    </item>
-    <item>
-     <widget class="QTextBrowser" name="file_display">
-      <property name="font">
-       <font>
-        <family>DejaVu Sans Mono</family>
-        <pointsize>10</pointsize>
-       </font>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
       </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPlainTextEdit" name="ksy_editor">
+         <property name="font">
+          <font>
+           <family>DejaVu Sans Mono</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTreeWidget" name="data_tree">
+         <property name="font">
+          <font>
+           <family>DejaVu Sans Mono</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <attribute name="headerVisible">
+          <bool>false</bool>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Data</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextBrowser" name="file_display">
+         <property name="font">
+          <font>
+           <family>DejaVu Sans Mono</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>
@@ -62,7 +160,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1031</width>
      <height>21</height>
     </rect>
    </property>
